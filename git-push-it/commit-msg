@@ -1,0 +1,7 @@
+#!/bin/sh
+# randomly (1 in 3 chance) insert a url into a git commit message 
+# *after* it's been written.
+# 
+# to increase or decrease the probability, decrease or increase N (respectively)
+N=3
+((RANDOM % $N)) || echo "http://www.youtube.com/watch?v=vCadcBR95oU" >> "$1"
