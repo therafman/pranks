@@ -19,12 +19,16 @@ void blink(int times) {
 
 // Perform apple keyboard calibration sequence
 void calibrateKeyboard() {
+  // signal calibrate start
+  blink(1);
   // 5 seconds to press continue button
   DigiKeyboard.delay(5000);
-  DigiKeyboard.sendKeyStroke(KEY_ENTER);
-  DigiKeyboard.delay(500);
+  // signal calibrate progress
+  blink(2);
   DigiKeyboard.sendKeyStroke(KEY_Z);
   DigiKeyboard.delay(500);
+  // signal calibrate progress
+  blink(3);
   DigiKeyboard.sendKeyStroke(KEY_FWDSLASH);
 }
 
@@ -50,7 +54,7 @@ void rickroll() {
     DigiKeyboard.sendKeyStroke(KEY_VOLUP);
   }
   //signal rickroll sequence complete
-  blink(3);
+  blink(2);
 }
 
 void setup() {
@@ -58,8 +62,8 @@ void setup() {
   pinMode(PIN_LED, OUTPUT); //LED on Model B
   //do apple keyboard setup
   calibrateKeyboard();
-  //5 seconds to dismiss setup window
-  DigiKeyboard.delay(5000);
+  //2 seconds to dismiss setup window
+  DigiKeyboard.delay(2000);
   //rickroll immediately for testing purposes
   rickroll();
 }
