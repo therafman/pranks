@@ -69,7 +69,7 @@ void setup() {
 }
 
 void loop() {
-  // double sec = INTERVAL_MIN + (rand() % (INTERVAL_MAX - INTERVAL_MIN));
-  // DigiKeyboard.delay(sec*1000);
-  // rickroll();
+  double sec = INTERVAL_MIN + (rand() % (INTERVAL_MAX - INTERVAL_MIN));
+  DigiKeyboard.delay(sec*1000);
+  rickroll();
 }
