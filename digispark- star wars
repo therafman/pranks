@@ -1,0 +1,76 @@
+#include <DigiKeyboard.h>
+//#include <usb_names.h>
+ 
+//#define MANUFACTURER_NAME	{'F','o','o','B','a','r'}
+//#define MANUFACTURER_NAME_LEN	6
+//#define PRODUCT_NAME	{'M','e','g','a','M','I','D','I'}
+//#define PRODUCT_NAME_LEN	8
+ 
+int led = 1;
+ 
+void setup() {
+  pinMode(led, OUTPUT);
+  DigiKeyboard.update();
+  
+    digitalWrite(led, 0);
+  //DigiKeyboard.update();
+  DigiKeyboard.sendKeyStroke(0);
+  //DigiKeyboard.sendKeyStroke(KEY_M, KEY_SPACE);
+  //DigiKeyboard.sendKeyStroke(KEY_SPACE, MOD_GUI_LEFT | MOD_CONTROL_LEFT | MOD_SHIFT_LEFT);
+  DigiKeyboard.sendKeyStroke(KEY_SPACE, MOD_GUI_LEFT);
+  delay(500);
+  DigiKeyboard.sendKeyStroke(KEY_T);
+  DigiKeyboard.sendKeyStroke(KEY_E);
+  DigiKeyboard.sendKeyStroke(KEY_R);
+  DigiKeyboard.sendKeyStroke(KEY_M);
+  DigiKeyboard.sendKeyStroke(KEY_I);
+  DigiKeyboard.sendKeyStroke(KEY_N);
+  DigiKeyboard.sendKeyStroke(KEY_A);
+  DigiKeyboard.sendKeyStroke(KEY_L);
+  delay(500);
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  delay(1000);
+  DigiKeyboard.sendKeyStroke(KEY_T, MOD_GUI_LEFT);
+  delay(3000);
+  //telnet towel.blinkenlights.nl
+  DigiKeyboard.sendKeyStroke(KEY_T);
+  DigiKeyboard.sendKeyStroke(KEY_E);
+  DigiKeyboard.sendKeyStroke(KEY_L);
+  DigiKeyboard.sendKeyStroke(KEY_N);
+  DigiKeyboard.sendKeyStroke(KEY_E);
+  DigiKeyboard.sendKeyStroke(KEY_T);
+  DigiKeyboard.sendKeyStroke(KEY_SPACE);
+  //towel.blinkenlights.nl
+  DigiKeyboard.sendKeyStroke(KEY_T);
+  DigiKeyboard.sendKeyStroke(KEY_O);
+  DigiKeyboard.sendKeyStroke(KEY_W);
+  DigiKeyboard.sendKeyStroke(KEY_E);
+  DigiKeyboard.sendKeyStroke(KEY_L);
+  DigiKeyboard.sendKeyStroke(55);
+  DigiKeyboard.sendKeyStroke(KEY_B);
+  DigiKeyboard.sendKeyStroke(KEY_L);
+  DigiKeyboard.sendKeyStroke(KEY_I);
+  DigiKeyboard.sendKeyStroke(KEY_N);
+  DigiKeyboard.sendKeyStroke(KEY_K);
+  DigiKeyboard.sendKeyStroke(KEY_E);
+  DigiKeyboard.sendKeyStroke(KEY_N);
+  DigiKeyboard.sendKeyStroke(KEY_L);
+  DigiKeyboard.sendKeyStroke(KEY_I);
+  DigiKeyboard.sendKeyStroke(KEY_G);
+  DigiKeyboard.sendKeyStroke(KEY_H);
+  DigiKeyboard.sendKeyStroke(KEY_T);
+  DigiKeyboard.sendKeyStroke(KEY_S);
+  DigiKeyboard.sendKeyStroke(55);
+  DigiKeyboard.sendKeyStroke(KEY_N);
+  DigiKeyboard.sendKeyStroke(KEY_L);
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  digitalWrite(led, 1);
+  delay(1000);
+}
+ 
+void loop() {
+  digitalWrite(led, 0);
+  delay(1000);
+  digitalWrite(led, 1);
+  delay(1000);
+}
